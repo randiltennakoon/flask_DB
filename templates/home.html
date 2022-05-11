@@ -15,8 +15,27 @@
 {% block body %}
 
 <div class="container mt-3">
+    <div class="col-md-6 rounded">
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}"> {{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     <h1>Home</h1>
 
+    {% for user in users %}
+        <p>
+            {{ user.id }}<br />
+            {{ user.username}} <br />
+            {{ user.email }}<br />
+            {{ user.password }}<br />
+            {{ user.date_registered }}
+        </p>
+    {% endfor %}
 
 
 
@@ -26,7 +45,6 @@
 
 
 
-    
 
     <p class="login">
         <a class="btn btn-primary btn-sm" href="{{ url_for('login') }}">Login</a>
@@ -36,7 +54,8 @@
         <a class="btn btn-primary btn-sm" href="{{ url_for('register') }}">Register</a>
     </p>
 
-
+    
+    </div>
 </div>
 
 
