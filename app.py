@@ -1,5 +1,5 @@
-from flask import Flask, render_template, url_for, redirect
-from forms import RegistrationForm
+from flask import Flask, render_template, url_for, redirect, flash
+from forms import RegistrationForm, LoginForm
 
 app = Flask(__name__)
 
@@ -12,9 +12,10 @@ def home():
     return render_template('home.html', title='Home')
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html', title='Login')
+    form = LoginForm()
+    return render_template('login.html', title='Login', form=form)
 
 
 @app.route('/register', methods=['GET', 'POST'])
