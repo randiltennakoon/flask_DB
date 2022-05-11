@@ -23,26 +23,6 @@ class User(db.Model):
     password = db.Column(db.String(60), nullable=False)
     date_registered = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
-    # def __repr__(self):
-    #     return f"User('{self.username}', '{self.email}'"
-
-    # def validate_email():
-    #     user = User.query.filter_by(email)
-
-
-# users = [
-#     {
-#         'username' : 'admin',
-#         'email' : 'admin@gmail.com',
-#         'password' : '1234'
-#     },
-#     {
-#         'username' : 'randil',
-#         'email' : 'randil@gmail.com',
-#         'password' : 'pass'
-#     }
-# ]
-
 
 
 @app.route('/')
