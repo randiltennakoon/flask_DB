@@ -2,7 +2,6 @@ from flask import render_template, url_for, redirect, flash
 from Flask_DB import app, db
 from Flask_DB.forms import RegistrationForm, LoginForm
 from Flask_DB.models import User
-from flask_login import login_user, current_user, logout_user, login_required
 
 @app.route('/')
 def home():

@@ -32,7 +32,7 @@
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
                 <legend class="border-bottom my-5">Log In</legend>
-                <div class="form-group">
+                <div class="form-group mb-3">
                     {{ form.email.label(class="form-control-label") }}
                     {% if form.email.errors %}
                         {{ form.email(class="form-control form-control-lg is-invalid") }}
@@ -45,7 +45,7 @@
                         {{ form.email(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-3">
                     {{ form.password.label(class="form-control-label") }}
                     {% if form.password.errors %}
                         {{ form.password(class="form-control form-control-lg is-invalid") }}
@@ -60,13 +60,10 @@
                 </div>
 
             </fieldset>
-            
+
             <div class="form-group">
                 {{ form.submit(class="btn btn-sm btn-outline-primary")}}
             </div>
-            <small class="text-muted ml-2">
-                <a href="#">Forgot Password?</a>
-            </small>
         </form>
 
 
@@ -74,11 +71,6 @@
             <small class="text-muted">
                 Need An Account?<a href="{{ url_for('register') }}" class="ml-2">Sign Up Now</a>
             </small>
-            <p>
-                <small class="text-muted">
-                    <a href="{{ url_for('home') }}" class="ml-2">Home</a>
-                </small>
-            </p>
         </div>
     </div>
     
